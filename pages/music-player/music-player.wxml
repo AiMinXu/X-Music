@@ -1,0 +1,2 @@
+<!--pages/music-player/music-player.wxml-->
+<view>{{currentSong.name}}</view>
