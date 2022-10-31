@@ -1,6 +1,7 @@
 // pages/detail-song/detail-song.js
 import recommendStore from '../../store/recommendStore'
 import rankingStore from '../../store/rankingStore'
+import playerStore from '../../store/playerStore'
 import { getPlaylistDetail } from "../../services/music"
 Page({
 
@@ -57,6 +58,10 @@ Page({
     wx.setNavigationBarTitle({
       title: value.name,
     })
+  },
+  //监听
+  onSongItemTap() {
+    playerStore.setState("playSongList",this.data.songInfo.tracks)
   },
   /**
    * 生命周期函数--监听页面卸载
